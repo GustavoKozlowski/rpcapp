@@ -1,20 +1,21 @@
+import { CommonActions, Link, useNavigation } from "@react-navigation/native";
 import { React, useState } from "react";
-import { Alert, TouchableOpacity, StatusBar, View, Text } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import { Alert, Text } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import Logo from "../../components/logo";
 import {
   Container,
   Box,
   ButtonLogin,
   TextButton,
-  Rpc,
   IntroText,
   BoxInput,
   BoxTitle,
-  AccountText
+  AccountText,
 } from "./styles";
 
 export default function Login() {
-  const [user, setUser] = useState("asahsuah");
+  const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
 
   const users = {
@@ -22,17 +23,23 @@ export default function Login() {
     password: "luka",
   };
 
+  const navigation = useNavigation();
   const entrar = () => {
     user === users?.name && pass === users?.password
-      ? Alert.alert("entrouuuuu!")
+      ? navigation.dispatch(
+          CommonActions.navigate({
+            name: "Home",
+          })
+        )
       : Alert.alert("SENHA INCORRETA");
   };
   return (
     <Container>
-      <Rpc
-        source={{
-          uri: "https:upload.wikimedia.org/wikipedia/pt/thumb/7/76/Logotipo_da_RPC.png/200px-Logotipo_da_RPC.png",
-        }}
+      <StatusBar style="auto" />
+      <Logo
+        width={200}
+        height={140}
+        url="https:upload.wikimedia.org/wikipedia/pt/thumb/7/76/Logotipo_da_RPC.png/200px-Logotipo_da_RPC.png"
       />
 
       <IntroText>
@@ -53,7 +60,8 @@ export default function Login() {
           <TextButton>Entrar</TextButton>
         </ButtonLogin>
         <AccountText>
-          Ainda não tem conta? Clique aqui
+          Ainda não possui conta?
+          <Link to={{ screen: "Form" }}> Clique aqui!</Link>
         </AccountText>
       </Box>
       <Text>{user}</Text>

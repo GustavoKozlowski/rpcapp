@@ -40,11 +40,6 @@ export const TextButton = styled.Text`
         color: #006497;
         font-size: 18px;
 `
-export const Rpc = styled.Image`
-       width: 140px;
-       height: 70px;
-       margin-bottom: 5px;
-`
 export const IntroText = styled.Text`
         color: #006497;
         font-size: 12px;
@@ -63,7 +58,7 @@ export const BoxTitle = styled.Text`
 export const BoxInput = styled.TextInput`
         background-color: #fff;
         color: #006497;
-        height: 30;
+        height: 30px;
         width: 220px;
         margin-top: 10px;
         border: black;
@@ -71,7 +66,7 @@ export const BoxInput = styled.TextInput`
 `
 export const AccountText = styled.Text`
         color: #fff;
-        font-size: 15;
+        font-size: 15px;
         text-align: center;
-        margin-top: 20;
+        margin-top: 20px;
  `
