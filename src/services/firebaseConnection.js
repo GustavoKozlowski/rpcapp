@@ -1,17 +1,21 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+
+import {initializeApp} from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBLvVsT6vhS4inAPI8DmEeyRrEtdFiTTu4",
-  authDomain: "dbusuarios-1010.firebaseapp.com",
-  projectId: "dbusuarios-1010",
-  storageBucket: "dbusuarios-1010.appspot.com",
-  messagingSenderId: "112450055101",
-  appId: "1:112450055101:web:ea94fb004fee9efdd2c0d4",
-  measurementId: "G-D05CWQ7P0J"
+  apiKey: "AIzaSyDpywUCAG4kRKtD8dMWRHrbK28xHy4rDJ0",
+  authDomain: "db-rpc.firebaseapp.com",
+  databaseURL: "https://db-rpc-default-rtdb.firebaseio.com",
+  projectId: "db-rpc",
+  storageBucket: "db-rpc.appspot.com",
+  messagingSenderId: "344869532590",
+  appId: "1:344869532590:web:618a9b58ec4ec18a6f0e3f"
 };
 
-
-export const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app);
+export const database = getDatabase(app);
+

@@ -6,23 +6,21 @@ import Logo from "../../components/logo";
 import MyButton from "../../components/button";
 import { Alert, Text } from "react-native";
 
+
+
 export default function Form() {
-  const [name, setName] = useState('');
-  const [pass, setPass] = useState('');
-  const [email, setEmail] = useState('');
-  const [errorName, setErrorName] = useState('');
-  const [errorPass, setErrorPass] = useState('');
-  const [errorEmail, setErrorEmail] = useState('');
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [errorName, setErrorName] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
+  const [errorEmail, setErrorEmail] = useState("");
   const txt = <Text>Cadastrar</Text>;
 
-  const validar = () => {
-  
+   function createUser() {
+      Alert.alert("Ainda estamos finalizando essa parte!")
   };
-  const salvar = () => {
-        
-   validar() ? console.log("Salvou") : '';
 
-  };
   return (
     <Container>
       <StatusBar style="auto" />
@@ -45,12 +43,12 @@ export default function Form() {
           errorMessage={errorEmail}
         />
         <InputForm
-          onChangeText={(value) => setPass(value)}
-          value={pass}
+          onChangeText={(value) => setPassword(value)}
+          value={password}
           placeholder="Senha"
-          errorMessage={errorPass}
+          errorMessage={errorPassword}
         />
-        <MyButton text={txt} />
+        <MyButton onPress={() => createUser()} text={txt} />
       </Box>
     </Container>
   );

@@ -15,8 +15,8 @@ import {
 } from "./styles";
 
 export default function Login() {
-  const [user, setUser] = useState("");
-  const [pass, setPass] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const users = {
     name: "oi",
@@ -25,13 +25,13 @@ export default function Login() {
 
   const navigation = useNavigation();
   const entrar = () => {
-    user === users?.name && pass === users?.password
+    email === users?.name && password === users?.password
       ? navigation.dispatch(
           CommonActions.navigate({
-            name: "Home",
+            name: "Programas",
           })
         )
-      : Alert.alert("SENHA INCORRETA");
+      : Alert.alert( "Erro ao efetuar o Login","E-mail ou Senha inválidos");
   };
   return (
     <Container>
@@ -48,24 +48,26 @@ export default function Login() {
       <Box>
         <BoxTitle>Login</BoxTitle>
         <BoxInput
-          placeholder="usuário"
-          onChangeText={(value) => setUser(value)}
+          placeholder="email"
+          onChangeText={(value) => setEmail(value)}
+          value={email}
         />
         <BoxInput
           placeholder="senha"
-          onChangeText={(value) => setPass(value)}
+          onChangeText={(value) => setPassword(value)}
           secureTextEntry={true}
+          value={password}
         />
         <ButtonLogin onPress={() => entrar()}>
           <TextButton>Entrar</TextButton>
         </ButtonLogin>
         <AccountText>
           Ainda não possui conta?
-          <Link to={{ screen: "Form" }}> Clique aqui!</Link>
+          <Link to={{ screen: "Formulario" }}> Clique aqui!</Link>
         </AccountText>
       </Box>
-      <Text>{user}</Text>
-      <Text>{pass}</Text>
+      <Text>{email}</Text>
+      <Text>{password}</Text>
     </Container>
   );
 }
