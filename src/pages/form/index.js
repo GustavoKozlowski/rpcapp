@@ -6,8 +6,6 @@ import Logo from "../../components/logo";
 import MyButton from "../../components/button";
 import { Alert, Text } from "react-native";
 
-
-
 export default function Form() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -17,9 +15,9 @@ export default function Form() {
   const [errorEmail, setErrorEmail] = useState("");
   const txt = <Text>Cadastrar</Text>;
 
-   function createUser() {
-      Alert.alert("Ainda estamos finalizando essa parte!")
-  };
+  function createUser() {
+    Alert.alert("Ainda estamos finalizando essa parte!");
+  }
 
   return (
     <Container>

@@ -1,6 +1,6 @@
 import { CommonActions, Link, useNavigation } from "@react-navigation/native";
 import { React, useState } from "react";
-import { Alert, Text } from "react-native";
+import { Alert } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Logo from "../../components/logo";
 import {
@@ -28,10 +28,10 @@ export default function Login() {
     email === users?.name && password === users?.password
       ? navigation.dispatch(
           CommonActions.navigate({
-            name: "Programas",
+            name: "Home",
           })
         )
-      : Alert.alert( "Erro ao efetuar o Login","E-mail ou Senha inválidos");
+      : Alert.alert("Erro ao efetuar o Login", "E-mail ou Senha inválidos");
   };
   return (
     <Container>
@@ -66,8 +66,6 @@ export default function Login() {
           <Link to={{ screen: "Formulario" }}> Clique aqui!</Link>
         </AccountText>
       </Box>
-      <Text>{email}</Text>
-      <Text>{password}</Text>
     </Container>
   );
 }
